@@ -1,96 +1,133 @@
-# Airbnb-Inspired Full-Stack Web Application 🚀
+Airbnb-Inspired Full-Stack Web Application 🚀
+Table of Contents
 
+Project Overview
 
-## Table of Contents
+Technologies & Packages Used
 
--   [Project Overview](#project-overview)
--   [Technologies & Packages Used](#technologies--packages-used)
--   [Key Features](#key-features)
--   [Challenges & Solutions](#challenges--solutions)
--   [Special Thanks](#special-thanks)
--   [Author](#author)
--   [Project Link](#project-link)
--   [Thank You](#thank-you)
+Key Features
 
+Challenges & Solutions
 
-## Project Overview
+Special Thanks & Acknowledgements
 
-Excited to share my journey of developing a feature-rich full-stack web application inspired by Airbnb. The project is built using MongoDB, Express.js, and Node.js.
+Author
 
-## Technologies & Packages Used
+Project Link
 
-### Backend
+Thank You
 
--   **MongoDB**: NoSQL database for flexible and scalable data storage.
--   **Express.js**: Web application framework for Node.js, providing robust features for web and mobile applications.
--   **Node.js**: JavaScript runtime for server-side development.
+Project Overview
 
-### Authentication
+Excited to share my journey of developing a feature-rich full-stack web application inspired by Airbnb. The project is built using MongoDB, Express.js, and Node.js and includes multiple enhancements to improve functionality and usability.
 
--   **Passport.js**: Middleware for user authentication, supporting various strategies.
--   **Dotenv**: Environment variable management for secure configuration.
+Technologies & Packages Used
+Backend
 
-### Image Storage
+MongoDB: NoSQL database for flexible and scalable data storage
 
--   **Cloudinary**: Cloud-based image and video management solution.
+Express.js: Web application framework for Node.js
 
-### Maps
+Node.js: JavaScript runtime for server-side development
 
--   **Mapbox**: Platform for custom maps and location-based experiences.
+Authentication
 
-### Frontend
+Passport.js: Middleware for user authentication
 
--   **EJS**: Embedded JavaScript templates for dynamic content rendering.
+Dotenv: Environment variable management
 
-### Session Management
+Image Storage
 
--   **Connect Flash**: Middleware for flash messages.
--   **Connect Mongo**: MongoDB session store for Express.js.
--   **Cookie Parser**: Middleware for parsing cookies.
+Local Storage: Files are stored locally (Cloudinary integration removed due to storage issues)
 
-### Validation
+Maps
 
--   **Joi**: Library for data validation.
+Mapbox: Simplified map functionality without requiring credit details
 
-### Object Modeling
+Frontend
 
--   **Mongoose**: MongoDB object modeling for Node.js.
+EJS: Embedded JavaScript templates for dynamic content rendering
 
-### File Uploads
+Session Management
 
--   **Multer**: Middleware for handling file uploads.
+Connect Flash: Flash message middleware
 
-### Social Authentication
+Connect Mongo: MongoDB session store for Express.js
 
--   **Passport Local**: Local authentication strategy.
--   **Passport Facebook**: Facebook authentication strategy.
--   **Passport Google OAuth20**: Google OAuth2.0 authentication strategy.
--   **Passport Local Mongoose**: Mongoose-specific authentication strategy.
-    Authentication
+Cookie Parser: Middleware for parsing cookies
 
-## Key Features
+Validation
 
--   **User Authentication:** Login, Logout, and User Profile Section
--   **CRUD Operations:** Add, Edit, and Delete Listings
--   **Review System:** Add and Delete Reviews
--   **Account Management:** Update User Account and Password
--   **User Data Security:** Password Hashing and Encryption
--   **Interactive Maps:** Leveraging Mapbox for Location Visualization
--   **Login with Google:** Authenticate with your Google account for a seamless experience
--   **Login with Facebook:** Easily log in using your Facebook credentials
--   **Login with Email:** Traditional email login for user convenience
+Joi: Data validation library
 
-## Challenges & Solutions
+Object Modeling
 
-Encountered challenges, especially with data handling, but implemented efficient solutions. Overcame scalability issues with a well-architected backend and also payment methods.
+Mongoose: MongoDB object modeling for Node.js
 
-## Special Thanks
+File Uploads
 
-A heartfelt thank you to Shradha Khapra didi and AMAN DHATTARWAL bhaiya at #ApnaCollege for their invaluable support and collaboration. As mentors and teachers, your guidance has been instrumental in shaping the success of this project. Your dedication to fostering learning and innovation has made a lasting impact, and I'm grateful for the opportunity to learn and grow under your mentorship.
+Multer: Middleware for handling file uploads
 
-## Thank You
+Social Authentication
 
-Thank you for exploring Airbnb! Your feedback is valuable. If you have any suggestions or thoughts, feel free to share them with us. 😊
+Passport Local: Local authentication strategy
 
----
-### Thanks for visit... 😊😊😊
+Passport Facebook: Facebook authentication strategy
+
+Passport Google OAuth2.0: Google authentication strategy
+
+Passport Local Mongoose: Mongoose-specific authentication strategy
+
+Key Features
+
+User Authentication: Login, Logout, and User Profile Section
+
+CRUD Operations: Add, Edit, and Delete Listings
+
+Review System: Add and Delete Reviews
+
+Account Management: Update User Account and Password
+
+User Data Security: Password Hashing and Encryption
+
+Interactive Maps: Simplified Mapbox integration
+
+Login with Google / Facebook / Email: Multiple authentication options
+
+Payment Gateway: Fully integrated for seamless transactions
+
+Challenges & Solutions
+
+Overcame data handling and scalability issues with a well-architected backend
+
+Adjusted file storage due to Cloudinary limitations (now using local storage)
+
+Simplified Mapbox implementation to avoid credit requirement
+
+Integrated a payment gateway for live transactions
+
+Special Thanks & Acknowledgements
+
+A special thanks to Rakhee Baghel
+ for the initial repository which inspired this project. I have made significant updates, including:
+
+Integrated a payment gateway for seamless transactions
+
+Adjusted file storage: Files are now stored locally
+
+Updated Mapbox implementation: Maps now work without credit restrictions
+
+A heartfelt thank you also goes to Shradha Khapra didi and AMAN DHATTARWAL bhaiya at #ApnaCollege for their invaluable mentorship and guidance throughout the development of this project.
+
+Author
+
+Dheeraj026
+Email: pujardheeraj3@gmail.com
+
+Project Link
+
+[Live Demo / Repository Link]
+
+Thank You
+
+Thank you for exploring this Airbnb-inspired project! Your feedback is valuable. If you have suggestions or thoughts, feel free to share them. 😊
