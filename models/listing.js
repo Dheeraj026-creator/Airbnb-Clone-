@@ -26,37 +26,26 @@ const listingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  geometry: {
-    type: {
-      type: String,
-      enum: ["Point"],
-      required: true,
-    },
-    coordinates: {
-      type: [Number],
-      required: true,
-    },
-  },
   category: {
     type: [String],
   },
 });
 
-// Define post middleware to delete all reviews in listing
+// 🧹 Post middleware to delete all reviews when a listing is deleted
 listingSchema.post("findOneAndDelete", async (listing) => {
   if (listing) {
     await Review.deleteMany({ _id: { $in: listing.reviews } });
   }
 });
 
-// Define pre middleware for deleteMany
+// 🧹 Pre middleware to delete reviews when multiple listings are deleted
 listingSchema.pre(
   "deleteMany",
   { document: false, query: true },
   async function () {
-    const listings = await this.model.find(this.getFilter()); // Get listings being deleted
-    const reviewIds = listings.flatMap((listing) => listing.reviews); // Extract review IDs
-    await Review.deleteMany({ _id: { $in: reviewIds } }); // Delete associated reviews
+    const listings = await this.model.find(this.getFilter());
+    const reviewIds = listings.flatMap((listing) => listing.reviews);
+    await Review.deleteMany({ _id: { $in: reviewIds } });
   }
 );
 

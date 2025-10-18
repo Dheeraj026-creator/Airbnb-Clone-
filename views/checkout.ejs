@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <h3>Processing Payment...</h3>
+
+    <script>
+        // Pass EJS values to JS variables
+        const key_id = "<%= key_id %>";
+        const order_currency = "<%= order.currency %>";
+        const order_id = "<%= order.id %>";
+
+        // ✅ Console logs to verify backend data
+        console.log("🔑 Razorpay Key ID:", key_id);
+        console.log("💰 Order Currency:", order_currency);
+        console.log("🧾 Order ID:", order_id);
+
+        // Razorpay options
+        var options = {
+            key: key_id,
+            amount: 900, // Test static amount (you can replace with dynamic)
+            currency: order_currency,
+            name: "Your App Name",
+            description: "Booking Payment",
+            order_id: order_id,
+            handler: function(response){
+                console.log("✅ Payment Successful:", response);
+                alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                window.location.href = "/booking-success?paymentId=" + response.razorpay_payment_id;
+            },
+            prefill: {
+                name: "Customer Name",
+                email: "customer@example.com"
+            },
+            theme: { color: "#3399cc" }
+        };
+
+        console.log("🧩 Razorpay Options:", options);
+
+        // Initialize Razorpay
+        var rzp = new Razorpay(options);
+        console.log("🚀 Razorpay instance created:", rzp);
+
+        // Open Razorpay Checkout
+        rzp.open();
+    </script>
+</body>
+</html>

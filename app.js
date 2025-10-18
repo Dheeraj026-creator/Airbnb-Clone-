@@ -21,7 +21,16 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const Razorpay = require('razorpay');
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+
+
+
+const razorpay = new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET
+});
 // const MONGO_URL = "mongodb://127.0.0.1:27017/Airbnb";
 const DB_URL = process.env.ATLASDB_URL;
 main()
@@ -107,6 +116,34 @@ app.use("/", userRouter);
 app.use("/profile", profileRouter);
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
+app.get('/payment', (req, res) => {
+  const { listingId, price } = req.query; // get data from query
+  res.render('payment', { listingId, price });
+});
+app.post('/create-order', async (req, res) => {
+  const { price, listingId } = req.body;
+  
+console.log(price);
+  const options = {
+      amount: price * 100, // in paise
+      currency: "INR",
+      receipt: `receipt_order_${listingId}`,
+      payment_capture: 1
+  };
+
+  try {
+      const order = await razorpay.orders.create(options);
+      res.render('checkout.ejs', { order, key_id: process.env.RAZORPAY_KEY_ID });// send order details to frontend
+  } catch (error) {
+      res.status(500).send(error);
+  }
+});
+
+app.get('/booking-success', (req, res) => {
+  const paymentId = req.query.paymentId;
+ res.redirect("/listings");
+});
+
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));
 });

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const path= require("path");
 const wrapAsync = require("../utils/wrapAsync.js");
 const { validateListing, isLoggedIn, isOwner } = require("../middleware.js");
 
@@ -8,7 +8,14 @@ const listingController = require("../controllers/listings.js"); //all backend c
 
 const multer = require("multer"); //install multer package in npm || multipart/form-data type receive and paras
 // const upload = multer({ dest: 'uploads/' })  //uploads folder me save karega
-const { storage } = require("../cloudConfig.js");
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/"); // folder to save uploaded files
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname)); // unique filename
+  }
+});
 const upload = multer({ storage });
 
 // Router.route----------------------------------

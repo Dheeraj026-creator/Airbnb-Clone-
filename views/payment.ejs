@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .payment-card {
+            background: #fff;
+            width: 350px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .price-tag {
+            background-color: #e9f5ee;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            color: #2e7d32;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 400px) {
+            .payment-card {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-card">
+        <h3>Complete Your Booking</h3>
+        <p>Secure payment powered by Razorpay</p>
+
+        <div class="price-tag">Amount: &#8377;<%= price %></div>
+
+        <form action="/create-order" method="POST">
+            <input type="hidden" name="price" value="<%= price %>">
+            <input type="hidden" name="listingId" value="<%= listingId %>">
+            <button type="submit" class="btn">Pay Now</button>
+        </form>
+    </div>
+</body>
+</html>

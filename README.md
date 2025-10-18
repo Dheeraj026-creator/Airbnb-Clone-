@@ -1,14 +1,5 @@
 # Airbnb-Inspired Full-Stack Web Application 🚀
 
-<p align="center">
-  <b style="color: blue;  ">Visitor count</b>
-  <br>
-  <a style="" href="https://github.com/Rakhisan">
-  <img src="https://profile-counter.glitch.me/Airbnb--Project/count.svg" />
-  </a>
-</p>
-
----
 
 ## Table of Contents
 
@@ -91,17 +82,11 @@ Excited to share my journey of developing a feature-rich full-stack web applicat
 
 ## Challenges & Solutions
 
-Encountered challenges, especially with data handling, but implemented efficient solutions. Overcame scalability issues with a well-architected backend.
+Encountered challenges, especially with data handling, but implemented efficient solutions. Overcame scalability issues with a well-architected backend and also payment methods.
 
 ## Special Thanks
 
 A heartfelt thank you to Shradha Khapra didi and AMAN DHATTARWAL bhaiya at #ApnaCollege for their invaluable support and collaboration. As mentors and teachers, your guidance has been instrumental in shaping the success of this project. Your dedication to fostering learning and innovation has made a lasting impact, and I'm grateful for the opportunity to learn and grow under your mentorship.
-
-## Author
-
-Rakhi Singh \
-Email: rakhisingh030118@gmail.com \
-LinkedIn : https://www.linkedin.com/in/rakhisingh23/
 
 ## Thank You
 
