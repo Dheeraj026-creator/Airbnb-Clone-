@@ -108,7 +108,7 @@ Integrated a payment gateway for live transactions
 
 Special Thanks & Acknowledgements
 
-A special thanks to Rakhee Baghel
+A special thanks to Rakhee Baghel  https://github.com/RakheeBaghel
  for the initial repository which inspired this project. I have made significant updates, including:
 
 Integrated a payment gateway for seamless transactions
